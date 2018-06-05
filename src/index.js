@@ -1,10 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import './main.less';
+import App from './components/App';
 
-const Index = () => {
-  return <div className="mas">Hello React!</div>;
-};
-
-ReactDOM.render(<Index />, document.getElementById("index"));
+ReactDOM.render(<App />, document.getElementById("index"));

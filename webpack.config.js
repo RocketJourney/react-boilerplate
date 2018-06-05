@@ -9,7 +9,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader"
@@ -19,18 +19,18 @@ module.exports = {
         test: /\.less$/,
         use: [
           {
-            loader: 'style-loader' // creates style nodes from JS strings
-          }, {
-            loader: 'css-loader' // translates CSS into CommonJS
-          }, {
-            loader: 'less-loader',
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader",
             options: {
-              modules: true,
-              importLoaders: 1,
-              localIdentName: "[name]_[local]_[hash:base64]",
               sourceMap: true,
-              minimize: true
+              modules: true,
+              localIdentName: "[local]___[hash:base64:5]"
             }
+          },
+          {
+            loader: "less-loader"
           }
         ]
       }
