@@ -3,7 +3,12 @@ import PropTypes from "prop-types";
 
 import styles from "./styles.less";
 
-const Button = ({ children, color, state, type, disabled }) => {
+import loader from "./img/spinner.svg";
+
+const Button = ({ children, color, state, type, disabled, loading }) => {
+  if (loading) {
+    return <img className={styles.loader} src={loader} alt="loader" />;
+  }
   return (
     <button
       className={`${styles.button} ${styles[color]} ${styles[type]}`}
@@ -16,13 +21,15 @@ const Button = ({ children, color, state, type, disabled }) => {
 
 Button.propTypes = {
   color: PropTypes.string,
-  disabled: PropTypes.boolean,
+  disabled: PropTypes.bool,
+  loading: PropTypes.bool,
   type: PropTypes.oneOf(["border", "fill"])
 };
 
 Button.defaultProps = {
   color: "blue",
   disabled: false,
+  loading: false,
   type: "fill"
 };
 
