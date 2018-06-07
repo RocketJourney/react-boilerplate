@@ -1,0 +1,85 @@
+@import "./colors.less";
+
+.button {
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  display: block;
+  font-family: "Montserrat";
+  font-size: 22px;
+  height: 60px;
+  line-height: 28px;
+  padding: 16px 30px;
+  width: 100%;
+  &:focus {
+    outline: none;
+  }
+  &.blue {
+    &:hover {
+      background-color: @blue-button-hover;
+    }
+    &:active {
+      background-color: @blue-button-active;
+      outline: none;
+    }
+    background-color: @blue-button;
+    color: @white-text;
+    opacity: 0.9;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: center;
+  }
+  &.green {
+    &:hover {
+      background-color: @green-button-hover;
+    }
+    &:active {
+      background-color: @green-button-active;
+      outline: none;
+    }
+    background-color: @green-button;
+    color: @white-text;
+    opacity: 0.9;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: center;
+  }
+  &.red {
+    &:hover {
+      background-color: @red-button-hover;
+    }
+    &:active {
+      background-color: @red-button-active;
+      outline: none;
+    }
+    background-color: @red-button;
+    color: @white-text;
+    opacity: 0.9;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: center;
+  }
+  &.yellow {
+    &:hover {
+      background-color: @yellow-button-hover;
+    }
+    &:active {
+      background-color: @yellow-button-active;
+      outline: none;
+    }
+    background-color: @yellow-button;
+    color: @black-text;
+    opacity: 0.9;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: center;
+  }
+}

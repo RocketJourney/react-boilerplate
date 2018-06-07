@@ -1,4 +1,5 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const path = require("path");
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: "./src/index.html",
@@ -9,14 +10,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader"
         }
       },
       {
-        test: /\.less$/,
+        test: /\.less?$/,
         use: [
           {
             loader: "style-loader"
@@ -30,11 +31,20 @@ module.exports = {
             }
           },
           {
-            loader: "less-loader"
+            loader: "less-loader",
+            options: {
+              paths: [
+                path.resolve(__dirname, "node_modules"),
+                path.resolve(__dirname, "src")
+              ]
+            }
           }
         ]
       }
     ]
+  },
+  resolve: {
+    extensions: [".less", ".js", ".jsx", ".react.js"]
   },
   plugins: [htmlPlugin]
 };
