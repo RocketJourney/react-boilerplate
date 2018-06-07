@@ -9,10 +9,13 @@ if (process.env.NODE_ENV !== "production") {
 
 const App = () => (
   <div>
-    <Button color="blue">Un Label de Botón</Button>
-    <Button color="green">Un Label de Botón</Button>
-    <Button color="red">Un Label de Botón</Button>
-    <Button color="yellow">Un Label de Botón</Button>
+    <Button color="yellow" type="fill">
+      Un Label de Botón
+    </Button>
+    <br />
+    <Button color="yellow" type="border" disabled>
+      Un Label de Botón
+    </Button>
   </div>
 );
 

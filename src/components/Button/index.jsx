@@ -3,10 +3,12 @@ import PropTypes from "prop-types";
 
 import styles from "./styles.less";
 
-const Button = ({ children, color, state, type }) => {
-  console.log(styles);
+const Button = ({ children, color, state, type, disabled }) => {
   return (
-    <button className={`${styles.button} ${styles[color]} ${styles[type]}`}>
+    <button
+      className={`${styles.button} ${styles[color]} ${styles[type]}`}
+      disabled={disabled}
+    >
       {children}
     </button>
   );
@@ -14,12 +16,14 @@ const Button = ({ children, color, state, type }) => {
 
 Button.propTypes = {
   color: PropTypes.string,
+  disabled: PropTypes.boolean,
   type: PropTypes.oneOf(["border", "fill"])
 };
 
 Button.defaultProps = {
-  type: "fill",
-  color: "blue"
+  color: "blue",
+  disabled: false,
+  type: "fill"
 };
 
 export default Button;
