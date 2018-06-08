@@ -1,5 +1,5 @@
 {
-  "name": "cc-ui",
+  "name": "control-center-ui",
   "version": "1.0.0",
   "description": "Control Center library UI made in React JS",
   "main": "index.js",
